@@ -1,0 +1,97 @@
+.skills-section {
+  background: #f8fafc;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.skill-group {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.skill-category {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a2a4a;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.skill-bar-item {}
+
+.skill-bar-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.skill-pct {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+.skill-bar-track {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.tech-badges-section {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.tech-badges-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a2a4a;
+  margin-bottom: 1rem;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  background: #1a2a4a;
+  color: #e2e8f0;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+  cursor: default;
+}
+
+.tech-badge:hover {
+  background: #2563eb;
+  color: #fff;
+}
