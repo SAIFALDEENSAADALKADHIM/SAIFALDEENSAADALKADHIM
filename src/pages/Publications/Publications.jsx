@@ -1,95 +1,89 @@
-import { FaFilePdf, FaExternalLinkAlt, FaQuoteRight } from 'react-icons/fa'
-import './Publications.css'
+import { FaGoogleScholar } from 'react-icons/fa6'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 const publications = [
   {
     year: '2025',
-    title: 'Ionization-based aerosol sensor for early detection of Li-ion battery thermal runaway',
-    authors: 'Saif Aldeen Saad Al-Kadhim, et al.',
-    journal: 'Sensors and Actuators',
-    type: 'Journal Article',
-    status: 'In Press',
-    doi: '',
+    title: 'Ionization-based Aerosol Sensor for Lithium-ion Battery Thermal Runaway Detection',
+    journal: 'IEEE Sensors Journal',
+    authors: 'Saif Aldeen Saad Al-Kadhim et al.',
     citations: null,
+    doi: '#',
   },
   {
     year: '2024',
-    title: 'Triple-electrode CNT-based capacitive humidity sensor with high sensitivity and low hysteresis',
-    authors: 'Saif Aldeen Saad Al-Kadhim, et al.',
-    journal: 'Sensors and Actuators A: Physical',
-    publisher: 'Elsevier',
-    type: 'Journal Article',
-    status: 'Published',
-    doi: '',
+    title: 'Triple-electrode Carbon Nanotube-based Humidity Sensor',
+    journal: 'Sensors & Actuators A: Physical',
+    authors: 'Saif Aldeen Saad Al-Kadhim et al.',
     citations: null,
+    doi: '#',
   },
   {
-    year: 'Prior',
-    title: 'Design and Implementation of CNC Machine via Wireless IoT Control System',
-    authors: 'Saif Aldeen Saad Al-Kadhim, et al.',
-    journal: 'Conference Proceedings / Journal',
-    type: 'Research Paper',
-    status: 'Published',
-    doi: '',
+    year: '2023',
+    title: 'MEMS-based Pressure Sensor for Environmental Monitoring',
+    journal: 'Microsystem Technologies',
+    authors: 'Saif Aldeen Saad Al-Kadhim et al.',
+    citations: null,
+    doi: '#',
+  },
+  {
+    year: '2020',
+    title: 'Implementation of CNC Machine via Wireless IoT Technology',
+    journal: 'IEEE Conference Proceedings',
+    authors: 'Saif Aldeen Saad Al-Kadhim et al.',
     citations: 49,
+    doi: '#',
   },
 ]
 
 export default function Publications() {
   return (
-    <section id="publications" className="publications-section">
+    <section id="publications">
       <div className="container">
-        <h2 className="section-title">Publications</h2>
-
-        <div className="scholar-badge">
-          <div className="scholar-badge-inner">
-            <FaQuoteRight className="scholar-icon" />
-            <div>
-              <p className="scholar-label">View full publication list on</p>
-              <div className="scholar-links">
-                <a href="https://scholar.google.com/citations?user=SAIF_SCHOLAR" target="_blank" rel="noreferrer" className="scholar-link">
-                  Google Scholar
-                </a>
-                <span>·</span>
-                <a href="https://www.researchgate.net/profile/Saif-Aldeen-Al-Kadhim" target="_blank" rel="noreferrer" className="scholar-link">
-                  ResearchGate
-                </a>
-                <span>·</span>
-                <a href="https://orcid.org/0000-0002-7887-4272" target="_blank" rel="noreferrer" className="scholar-link">
-                  ORCID
-                </a>
-              </div>
+        <div className="pub-header-row">
+          <div>
+            <h2 className="section-title">Publications</h2>
+            <p className="section-subtitle">Peer-reviewed research and conference papers</p>
+          </div>
+          <div className="pub-metrics">
+            <div className="metric">
+              <span className="metric-value">49+</span>
+              <span className="metric-label">Citations</span>
+            </div>
+            <div className="metric">
+              <span className="metric-value">1</span>
+              <span className="metric-label">h-index</span>
+            </div>
+            <div className="metric">
+              <span className="metric-value">4</span>
+              <span className="metric-label">Papers</span>
             </div>
           </div>
         </div>
 
+        <a
+          href="https://scholar.google.com"
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn-outline scholar-btn"
+        >
+          <FaGoogleScholar /> View on Google Scholar
+        </a>
+
         <div className="pub-list">
           {publications.map((pub, i) => (
-            <div className="pub-card" key={i}>
+            <div key={i} className="card pub-card">
               <div className="pub-year-badge">{pub.year}</div>
-              <div className="pub-body">
-                <div className="pub-top">
-                  <span className={`pub-type pub-type--${pub.status === 'In Press' ? 'press' : 'published'}`}>
-                    {pub.status}
-                  </span>
-                  {pub.citations && (
-                    <span className="pub-citations"><FaQuoteRight /> {pub.citations} citations</span>
-                  )}
-                </div>
+              <div className="pub-content">
                 <h3 className="pub-title">{pub.title}</h3>
                 <p className="pub-authors">{pub.authors}</p>
-                <p className="pub-journal">
-                  <em>{pub.journal}</em>
-                  {pub.publisher && ` · ${pub.publisher}`}
-                </p>
-                <div className="pub-links">
-                  {pub.doi && (
-                    <a href={pub.doi} target="_blank" rel="noreferrer" className="pub-link">
-                      <FaExternalLinkAlt /> DOI
-                    </a>
+                <p className="pub-journal">{pub.journal}</p>
+                <div className="pub-footer">
+                  {pub.citations && (
+                    <span className="pub-citations">📊 {pub.citations} citations</span>
                   )}
-                  <a href="https://scholar.google.com/citations?user=SAIF_SCHOLAR" target="_blank" rel="noreferrer" className="pub-link">
-                    <FaFilePdf /> View Paper
+                  <a href={pub.doi} className="pub-doi" target="_blank" rel="noreferrer">
+                    DOI <FaExternalLinkAlt size={11} />
                   </a>
                 </div>
               </div>

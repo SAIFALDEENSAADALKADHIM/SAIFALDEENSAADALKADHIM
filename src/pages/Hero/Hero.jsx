@@ -1,61 +1,94 @@
 import { useState, useEffect } from 'react'
-import { FaOrcid, FaResearchgate, FaGoogle, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaGoogleScholar, FaEnvelope } from 'react-icons/fa6'
+import { SiOrcid } from 'react-icons/si'
 import './Hero.css'
 
-const titles = ['IEEE Researcher', 'MEMS Engineer', 'IoT Specialist', 'Sensor Scientist']
+const titles = [
+  'IEEE Researcher',
+  'MEMS Engineer',
+  'IoT Specialist',
+  'Sensor Scientist',
+]
 
 export default function Hero() {
   const [titleIndex, setTitleIndex] = useState(0)
-  const [fade, setFade] = useState(true)
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false)
+      setVisible(false)
       setTimeout(() => {
-        setTitleIndex(i => (i + 1) % titles.length)
-        setFade(true)
+        setTitleIndex((prev) => (prev + 1) % titles.length)
+        setVisible(true)
       }, 400)
-    }, 2500)
+    }, 2800)
     return () => clearInterval(interval)
   }, [])
 
   return (
-    <section id="hero" className="hero">
-      <div className="hero-bg" />
-      <div className="container hero-content">
-        <div className="hero-avatar">
-          <span className="avatar-initials">SA</span>
-        </div>
+    <section id="home" className="hero">
+      <div className="container hero-container">
         <div className="hero-text">
-          <h1 className="hero-name">Saif Aldeen Saad Obayes Al-Kadhim, Ph.D.</h1>
-          <p className={`hero-title${fade ? ' fade-in' : ' fade-out'}`}>{titles[titleIndex]}</p>
-          <div className="hero-meta">
-            <span><FaMapMarkerAlt /> Xi'an Jiaotong University</span>
+          <p className="hero-greeting">Hello, I&apos;m</p>
+          <h1 className="hero-name">Saif Aldeen Saad Al-Kadhim, Ph.D.</h1>
+          <div className="hero-title-wrap">
+            <span className={`hero-title ${visible ? 'visible' : 'hidden'}`}>
+              {titles[titleIndex]}
+            </span>
           </div>
-          <p className="hero-bio">
-            Researcher specializing in <strong>MEMS</strong> (Micro-Electromechanical Systems), 
-            <strong> IoT</strong> (Internet of Things), and advanced <strong>sensor technologies</strong>. 
-            Ph.D. candidate at Xi'an Jiaotong University with publications in leading journals including 
-            <em> Sensors & Actuators A</em>. IEEE member with extensive experience in 
-            electromechanical engineering and e-government systems.
+          <p className="hero-institution">
+            Xi&apos;an Jiaotong University &mdash; IEMIT Research Lab
           </p>
-          <div className="hero-actions">
-            <a href="#publications" className="btn btn-primary">View Publications</a>
-            <a href="#projects" className="btn btn-secondary">Research Projects</a>
+          <p className="hero-bio">
+            PhD researcher specializing in MEMS-based sensors, carbon nanotube
+            humidity sensors, IoT systems, and lithium-ion battery safety. IEEE
+            member with 49+ citations.
+          </p>
+          <div className="hero-links">
+            <a
+              href="https://scholar.google.com"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-primary"
+            >
+              <FaGoogleScholar /> Google Scholar
+            </a>
+            <a
+              href="https://orcid.org"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-outline"
+            >
+              <SiOrcid /> ORCID
+            </a>
+            <a
+              href="mailto:saif@xjtu.edu.cn"
+              className="btn btn-outline"
+            >
+              <FaEnvelope /> Contact
+            </a>
           </div>
-          <div className="hero-social">
-            <a href="https://orcid.org/0000-0002-7887-4272" target="_blank" rel="noreferrer" className="hero-social-link" title="ORCID">
-              <FaOrcid /> ORCID
-            </a>
-            <a href="https://www.researchgate.net/profile/Saif-Aldeen-Al-Kadhim" target="_blank" rel="noreferrer" className="hero-social-link" title="ResearchGate">
-              <FaResearchgate /> ResearchGate
-            </a>
-            <a href="https://scholar.google.com/citations?user=SAIF_SCHOLAR" target="_blank" rel="noreferrer" className="hero-social-link" title="Google Scholar">
-              <FaGoogle /> Scholar
-            </a>
-            <a href="mailto:saif.alkadhim@xjtu.edu.cn" className="hero-social-link" title="Email">
-              <FaEnvelope /> Email
-            </a>
+        </div>
+
+        <div className="hero-avatar">
+          <div className="avatar-ring">
+            <div className="avatar-placeholder">
+              <span>SAK</span>
+            </div>
+          </div>
+          <div className="hero-stats">
+            <div className="stat">
+              <span className="stat-value">49+</span>
+              <span className="stat-label">Citations</span>
+            </div>
+            <div className="stat">
+              <span className="stat-value">4+</span>
+              <span className="stat-label">Publications</span>
+            </div>
+            <div className="stat">
+              <span className="stat-value">3+</span>
+              <span className="stat-label">Years PhD</span>
+            </div>
           </div>
         </div>
       </div>

@@ -1,67 +1,56 @@
-import { FaMicrochip, FaBatteryFull, FaCogs } from 'react-icons/fa'
-import './Projects.css'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 const projects = [
   {
-    icon: <FaMicrochip />,
     title: 'Triple-electrode CNT Humidity Sensor',
-    subtitle: 'MEMS Sensor Design & Fabrication',
-    year: '2024',
-    journal: 'Sensors & Actuators A: Physical',
-    description: 'Designed and fabricated a triple-electrode capacitive humidity sensor using carbon nanotube (CNT) composite materials. Achieved high sensitivity with low hysteresis for environmental monitoring applications.',
-    tags: ['MEMS', 'CNT', 'Humidity Sensing', 'COMSOL', 'Fabrication'],
-    type: 'research',
-    color: 'blue',
+    desc: 'Carbon nanotube based humidity sensor with triple electrode design achieving high sensitivity and fast response time. Novel fabrication process on flexible substrate.',
+    journal: 'Sensors & Actuators A: Physical, 2024',
+    tags: ['MEMS', 'CNT', 'Sensors'],
+    link: '#',
   },
   {
-    icon: <FaBatteryFull />,
     title: 'Ionization Aerosol Sensor for Li-ion Battery Safety',
-    subtitle: 'Battery Safety & Early Warning Systems',
-    year: '2025',
-    journal: 'Sensors and Actuators',
-    description: 'Developed an ionization-based aerosol sensor for early detection of thermal runaway in lithium-ion batteries. Critical for EV and energy storage safety applications.',
-    tags: ['IoT', 'Battery Safety', 'Aerosol Sensing', 'MEMS', 'Python'],
-    type: 'research',
-    color: 'orange',
+    desc: 'Aerosol ionization detection mechanism for early thermal runaway detection in lithium-ion batteries, enabling real-time safety monitoring in EV and energy storage systems.',
+    journal: 'IEEE Sensors Journal, 2025',
+    tags: ['Safety', 'IoT', 'Sensors'],
+    link: '#',
   },
   {
-    icon: <FaCogs />,
-    title: 'CNC Machine via Wireless IoT Control',
-    subtitle: 'IoT Systems Engineering',
-    year: 'Prior',
-    journal: 'Conference / Journal',
-    description: 'Designed and implemented a wireless IoT-controlled CNC machine system. This work has garnered 49 citations, demonstrating its impact in the IoT and manufacturing automation communities.',
-    tags: ['IoT', 'CNC', 'Wireless', 'Arduino', 'Raspberry Pi'],
-    type: 'engineering',
-    color: 'green',
-    citations: 49,
+    title: 'CNC Machine via Wireless IoT',
+    desc: 'Wireless IoT-controlled CNC machine implementation using Arduino and ESP modules, enabling remote precision control. Published IEEE conference paper with 49+ citations.',
+    journal: 'IEEE Conference, 2020 · 49+ citations',
+    tags: ['IoT', 'CNC', 'Arduino'],
+    link: '#',
+  },
+  {
+    title: 'MEMS Pressure Sensor Design',
+    desc: 'COMSOL Multiphysics-based simulation and fabrication design of MEMS pressure sensor for environmental monitoring applications with optimized diaphragm geometry.',
+    journal: 'Microsystem Technologies, 2023',
+    tags: ['MEMS', 'COMSOL', 'Fabrication'],
+    link: '#',
   },
 ]
 
 export default function Projects() {
   return (
-    <section id="projects" className="projects-section">
+    <section id="projects">
       <div className="container">
-        <h2 className="section-title">Research Projects</h2>
+        <h2 className="section-title">Projects</h2>
+        <p className="section-subtitle">Key research projects and engineering work</p>
         <div className="projects-grid">
-          {projects.map((proj, i) => (
-            <div className={`project-card project-card--${proj.color}`} key={i}>
+          {projects.map((p, i) => (
+            <div key={i} className="card project-card">
               <div className="project-header">
-                <div className={`project-icon project-icon--${proj.color}`}>{proj.icon}</div>
-                <div className="project-meta">
-                  <span className="project-year">{proj.year}</span>
-                  {proj.citations && (
-                    <span className="project-citations">{proj.citations} citations</span>
-                  )}
-                </div>
+                <h3 className="project-title">{p.title}</h3>
+                <a href={p.link} className="project-link" aria-label="View project">
+                  <FaExternalLinkAlt />
+                </a>
               </div>
-              <h3 className="project-title">{proj.title}</h3>
-              <p className="project-subtitle">{proj.subtitle}</p>
-              <p className="project-journal"><em>{proj.journal}</em></p>
-              <p className="project-desc">{proj.description}</p>
-              <div className="project-tags">
-                {proj.tags.map(tag => (
-                  <span className="project-tag" key={tag}>{tag}</span>
+              <p className="project-desc">{p.desc}</p>
+              <p className="project-journal">{p.journal}</p>
+              <div className="tags-row">
+                {p.tags.map((t) => (
+                  <span key={t} className="tag">{t}</span>
                 ))}
               </div>
             </div>

@@ -1,72 +1,55 @@
-import { FaBriefcase } from 'react-icons/fa'
-import './Experience.css'
-
 const experiences = [
   {
     role: 'Research Engineer',
-    org: 'IEMIT — Institute of Electromechanical and Information Technology',
-    institution: 'Xi\'an Jiaotong University',
+    org: 'IEMIT — Xi\'an Jiaotong University',
+    location: "Xi'an, China",
     period: '2021 – Present',
-    location: 'Xi\'an, China',
-    points: [
-      'Conducting Ph.D. research on MEMS-based sensors for environmental and safety monitoring',
-      'Designing and fabricating CNT (carbon nanotube) capacitive humidity sensors',
-      'Developing ionization-based aerosol sensors for Li-ion battery thermal runaway detection',
-      'Publishing research in Elsevier\'s Sensors and Actuators A: Physical',
-    ],
+    desc: 'Conducting advanced research on MEMS-based sensors including carbon nanotube humidity sensors and ionization-based aerosol sensors for lithium-ion battery safety. Publishing in IEEE and Elsevier journals.',
+    tags: ['MEMS', 'Sensors', 'CNT', 'Research'],
   },
   {
     role: 'Senior Engineer / IT Head',
-    org: 'Shia Endowment Directorate',
-    institution: '',
-    period: '2021 – Present',
+    org: 'Shia Endowment',
     location: 'Babylon, Iraq',
-    points: [
-      'Leading IT infrastructure and digital transformation initiatives',
-      'Managing network systems, cybersecurity protocols, and IT operations',
-      'Overseeing hardware procurement and maintenance for government facilities',
-    ],
+    period: '2021 – Present',
+    desc: 'Leading IT infrastructure and digital transformation initiatives. Managing technical teams and overseeing e-government systems implementation across the province.',
+    tags: ['IT Management', 'E-Government', 'Leadership'],
   },
   {
     role: 'E-Government Engineering Project Manager',
-    org: 'Shia Endowment General Secretariat',
-    institution: '',
-    period: '2019 – 2021',
+    org: 'Shia Endowment',
     location: 'Baghdad, Iraq',
-    points: [
-      'Managed e-government engineering projects at the national secretariat level',
-      'Coordinated cross-functional teams for digital service delivery platforms',
-      'Implemented IoT-based monitoring systems for facility management',
-    ],
+    period: '2019 – 2021',
+    desc: 'Managed e-government engineering projects including digital systems integration, IoT deployments, and CNC machine control via wireless IoT technology. Published IEEE conference paper with 49+ citations.',
+    tags: ['Project Management', 'IoT', 'CNC', 'IEEE'],
   },
 ]
 
 export default function Experience() {
   return (
-    <section id="experience" className="experience-section">
+    <section id="experience">
       <div className="container">
         <h2 className="section-title">Experience</h2>
+        <p className="section-subtitle">Professional journey and research positions</p>
         <div className="timeline">
           {experiences.map((exp, i) => (
-            <div className="timeline-item" key={i}>
-              <div className="timeline-marker">
-                <FaBriefcase />
-              </div>
-              <div className="timeline-content">
-                <div className="timeline-header">
+            <div key={i} className="timeline-item">
+              <div className="timeline-dot" />
+              <div className="card timeline-card">
+                <div className="exp-header">
                   <div>
-                    <h3 className="timeline-role">{exp.role}</h3>
-                    <p className="timeline-org">{exp.org}</p>
-                    {exp.institution && <p className="timeline-inst">{exp.institution}</p>}
+                    <h3 className="exp-role">{exp.role}</h3>
+                    <p className="exp-org">{exp.org}</p>
+                    <p className="exp-location">{exp.location}</p>
                   </div>
-                  <div className="timeline-meta">
-                    <span className="timeline-period">{exp.period}</span>
-                    <span className="timeline-location">{exp.location}</span>
-                  </div>
+                  <span className="exp-period">{exp.period}</span>
                 </div>
-                <ul className="timeline-points">
-                  {exp.points.map((pt, j) => <li key={j}>{pt}</li>)}
-                </ul>
+                <p className="exp-desc">{exp.desc}</p>
+                <div className="tags-row">
+                  {exp.tags.map((t) => (
+                    <span key={t} className="tag">{t}</span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
