@@ -23,9 +23,9 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills">
+    <section id="skills" aria-labelledby="skills-heading">
       <div className="container">
-        <h2 className="section-title">Skills</h2>
+        <h2 id="skills-heading" className="section-title">Skills</h2>
         <p className="section-subtitle">Technical expertise and research competencies</p>
         <div className="skills-grid">
           {skillCategories.map((cat) => (
