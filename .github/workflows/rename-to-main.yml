@@ -13,7 +13,7 @@ jobs:
       - name: Checkout current branch
         uses: actions/checkout@v4
         with:
-          ref: copilot/customize-portfolio-data
+          ref: copilot/check-code-and-files-for-deployment
           fetch-depth: 0
 
       - name: Force-update main to this branch
@@ -21,18 +21,18 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git push --force origin HEAD:main
-          echo "✅ main branch updated to match copilot/customize-portfolio-data"
+          echo "✅ main branch updated to match copilot/check-code-and-files-for-deployment"
 
-      - name: Delete copilot/customize-portfolio-data branch
+      - name: Delete copilot/check-code-and-files-for-deployment branch
         run: |
-          git push origin --delete "copilot/customize-portfolio-data" || true
-          echo "✅ copilot/customize-portfolio-data branch deleted"
+          git push origin --delete "copilot/check-code-and-files-for-deployment" || true
+          echo "✅ copilot/check-code-and-files-for-deployment branch deleted"
 
       - name: Summary
         run: |
           echo "## Branch rename complete" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ \`main\` now contains all portfolio code" >> $GITHUB_STEP_SUMMARY
-          echo "- ✅ \`copilot/customize-portfolio-data\` deleted" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ \`copilot/check-code-and-files-for-deployment\` deleted" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "The deploy workflow will automatically run now that \`main\` has been updated." >> $GITHUB_STEP_SUMMARY
