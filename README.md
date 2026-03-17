@@ -54,7 +54,7 @@ As **Vice Chair of IEEE P2418.11 Working Group** *(Blockchain-based Physical Dig
 ## 🎓 Education
 
 | Degree | Field | Institution |
-|---|---|---|:-:|
+|---|---|---|
 | 🎓 **Ph.D.** | Electrical Engineering | Xi'an Jiaotong University, China |
 | 🎓 **M.Sc.** | Electro-Mechanical System Engineering | University of Technology, Baghdad |
 | 📜 **H.D.** | Power System Technology | College of Electrical & Electronic Tech., MTU |
