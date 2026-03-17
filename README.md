@@ -55,10 +55,10 @@ As **Vice Chair of IEEE P2418.11 Working Group** *(Blockchain-based Physical Dig
 
 | Degree | Field | Institution | Year |
 |---|---|---|:-:|
-| 🎓 **Ph.D.** | Electrical Engineering | Xi'an Jiaotong University, China | 2025 |
-| 🎓 **M.Sc.** | Electro-Mechanical System Engineering | University of Technology, Baghdad | 2016 |
-| 📜 **H.D.** | Power System Technology | College of Electrical & Electronic Tech., MTU | 2011 |
-| 🎓 **B.Sc.** | Electrical Engineering | University of Babylon, Iraq | 2006 |
+| 🎓 **Ph.D.** | Electrical Engineering | Xi'an Jiaotong University, China |
+| 🎓 **M.Sc.** | Electro-Mechanical System Engineering | University of Technology, Baghdad |
+| 📜 **H.D.** | Power System Technology | College of Electrical & Electronic Tech., MTU |
+| 🎓 **B.Sc.** | Electrical Engineering | University of Babylon, Iraq |
 
 <details>
 <summary><b>🔑 Key Research Highlights</b></summary>
@@ -75,10 +75,10 @@ As **Vice Chair of IEEE P2418.11 Working Group** *(Blockchain-based Physical Dig
 ## 💼 Professional Experience
 
 ```
-Ph.D. Researcher (MEMS)           Xi'an Jiaotong University, China       2020 – 2025
-Head of Department / Researcher    University of Technology, Baghdad       2015 – 2020
+Ph.D. Researcher (MEMS)            Xi'an Jiaotong University, China       2020 – 2025
+Head of Department IT              Shiite Endowments Diwan, Iraq          2015 – 2020
 Assistant Professor                Al-Furat Al-Awsat Technical University  2017 – 2020
-Project Manager / Sr. Researcher   Shiite Endowments Diwan, Iraq           2017 – 2020
+Project Manager                    Shiite Endowments Diwan, Iraq           2017 – 2020
 IC Design Engineer                 Al Bader Electronic Industries, Iraq    2012 – 2015
 ```
 
@@ -89,13 +89,13 @@ IC Design Engineer                 Al Bader Electronic Industries, Iraq    2012 
 **Ph.D. Researcher (MEMS)** | Xi'an Jiaotong University, China | 2020–2025
 Lead researcher on high-sensitivity sensor projects for ionization-based detection and industrial safety.
 
-**Head of Department / Research Associate** | University of Technology, Baghdad | 2015–2020
+**Research Associate** | University of Technology, Baghdad | 2015–2020
 Led electromechanical engineering research with administrative responsibilities.
 
 **Assistant Professor** | Al-Furat Al-Awsat Technical University (ATU)
 Engineering Technical College, Najaf — Dept. of Laser and Electro-optics Technologies.
 
-**Project Manager / Senior Researcher** | Shiite Endowments Diwan, Iraq | 2017–2020
+**Project Manager / Senior Engineer** | Shiite Endowments Diwan, Iraq | 2017–2020
 Managed construction/technical projects with $5M budget, developing expertise in government coordination and large-scale execution.
 
 **IC Design Engineer** | Al Bader Electronic Industries, Iraq | 2012–2015
